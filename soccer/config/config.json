@@ -1,0 +1,8 @@
+{
+  "serverName" : "serverAndre",
+  "serverIP" : "192.168.15.7",
+  "portListen" : 80,
+  "memcachedServer" : "192.168.15.3",
+  "memcachedPort" : 11211,
+  "yearData" : [2008, 2010, 2012, 2014, 2016]
+}
