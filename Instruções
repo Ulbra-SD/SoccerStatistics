@@ -1,0 +1,19 @@
+Para configurar e utilizar a aplicação siga os passos abaixo:
+1 - O sistema foi desenvolvido utilizando PHP 7.2, MariaDB 10.1 e Apache. Caso não tenha estas ferrramentas instaladas, instale-as. Instale também os pacotes php-mysqli e php-memcache (apt-get install <i>php-mysqli php-memcache<i/>).
+2 - Baixe o arquivo soccedb.sql, que contém a base de dados MySQL que é utilizada pela aplicação.
+3 - Execute o comando <i>mysql -u root -h [hostname] [database] < soccerdb.sql <i/>, substituindo [hostname] pelo nome ou IP da máquina onde o banco foi instalado (localhost, no caso de ser a mesma máquina) e [database] pelo nome da base que se deseja criar.
+4 - Baixe a pasta soccer e o arquivo .htaccess e coloque-a em /var/www/html. Caso seu servidor já possua um arquivo .htaccess, copie o conteúdo do arquivo baixado e cole-o no início do seu arquivo (ou renomeie seu arquivo e use o .htaccess baixado para usar a aplicação).
+5 - Caso o módulo rewrite não esteja habilitado no seu servidor Apache:
+    - Ative com o comando <i>a2enmod rewrite<i/>.
+    - Edite o arquivo /etc/apache2/sites-enabled/000-default.conf:
+      - Procure pela linha DocumentRoot /varwww/html.
+      - Adicione o edite a diretiva <Directory "/var/www/html"> AllowOverride All </Directory>
+    - Faça o mesmo procedimento no arquivo /etc/apache2/sites-available/000-default.conf
+6 - Edite o arquivo /etc/php/7.2/apache2/php.ini e:
+    - Descomente a linha <i>extension=mysqli;<i/>
+    - Adicione a linha <i>extension=php-memcache<i/>
+7 - Inicie (ou reinicie) os serviços Apache e MariaDB.
+8 - No navegador, utilize o seguinte padrão de requisições:
+    /getData/<período>?playerName=<nomeDoJogador>
+    /getData/<período>?clubName=<nomeDoClube>
+    /getData/<período>?clubName=<nomeDoClube>&playerName=<nomeDoJogador>
