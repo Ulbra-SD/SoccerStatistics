@@ -30,7 +30,8 @@
 	$config = json_decode(file_get_contents('./config/config.json'));	// Carrega configurações
 	$serverName	= $config->serverName;
   	$serverIP 	= $config->serverIP;
-  	$portListen = $config->portListen;
+  	$portListen 	= $config->portListen;
+	$database	= $config->database;
   	$yearData 	= $config->yearData;
 
 	// ----- Coloca este processo na lista de servidores ativos no Memcached -----
@@ -56,12 +57,12 @@
 	// -----------------------------------------------------------------------------------------------------
 
 	$clubName 	= ($_GET["clubName"]);
-	$playerName = ($_GET["playerName"]);
+	$playerName 	= ($_GET["playerName"]);
 	$year 		= ($_GET["periodo"]);
 	$year 		= explode("/", $year);
 	$year 		= $year[1];
 
-	$db = mysqli_connect("localhost","raubach","","soccer") or die("Erro ao conectar na base de dados MySQL!");
+	$db = mysqli_connect("$database","raubach","","soccer") or die("Erro ao conectar na base de dados MySQL!");
 
 	if (in_array($year, $yearData)) {	// Se a requisição é para os anos que este processo trata...
 		if ($playerName == "") {	// CONSULTA DO TIME
