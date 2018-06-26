@@ -10,9 +10,11 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
 
 3 - Importe o dump da base de dados para o MySQL. O usuário é "root", sem senha.
 
-4 - Baixe a pasta soccer e o arquivo .htaccess e coloque os dois em /var/www/html. Caso seu servidor já possua um arquivo .htaccess, copie o conteúdo do arquivo baixado e cole-o no início do seu arquivo (ou renomeie seu arquivo e use o .htaccess baixado para usar a aplicação).
+4 - Altere o arquivo soccer/config/config.json e configure com os IPs e informações do seu ambiente.
 
-5 - Caso o módulo rewrite não esteja habilitado no seu servidor Apache:
+5 - Baixe a pasta soccer e o arquivo .htaccess e coloque os dois em /var/www/html. Caso seu servidor já possua um arquivo .htaccess, copie o conteúdo do arquivo baixado e cole-o no início do seu arquivo (ou renomeie seu arquivo e use o .htaccess baixado para usar a aplicação).
+
+6 - Caso o módulo rewrite não esteja habilitado no seu servidor Apache:
 
     - Ative com o comando a2enmod rewrite.
     
@@ -24,15 +26,15 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
     
     - Faça o mesmo procedimento no arquivo /etc/apache2/sites-available/000-default.conf
 
-6 - Edite o arquivo /etc/php/7.2/apache2/php.ini e:
+7 - Edite o arquivo /etc/php/7.2/apache2/php.ini e:
     
     - Descomente a linha extension=mysqli;
     
     - Adicione a linha extension=php-memcache;
     
-7 - Inicie (ou reinicie) os serviços Apache e MariaDB.
+8 - Inicie (ou reinicie) os serviços Apache e MariaDB.
 
-8 - No navegador, utilize o seguinte padrão de requisições:
+9 - No navegador, utilize o seguinte padrão de requisições:
     
     /getData/<período>?playerName=<nomeDoJogador>
     
