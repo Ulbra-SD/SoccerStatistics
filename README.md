@@ -41,3 +41,5 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
     /getData/<período>?clubName=<nomeDoClube>
     
     /getData/<período>?clubName=<nomeDoClube>&playerName=<nomeDoJogador>
+    
+OBS.: alterar o arquivo soccer/getData.php, na linha 199, onde consta um IP na atribuição, alterar para $srvIP:$srvPort
