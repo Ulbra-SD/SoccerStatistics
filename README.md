@@ -13,19 +13,29 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
 4 - Baixe a pasta soccer e o arquivo .htaccess e coloque os dois em /var/www/html. Caso seu servidor já possua um arquivo .htaccess, copie o conteúdo do arquivo baixado e cole-o no início do seu arquivo (ou renomeie seu arquivo e use o .htaccess baixado para usar a aplicação).
 
 5 - Caso o módulo rewrite não esteja habilitado no seu servidor Apache:
+
     - Ative com o comando <i>a2enmod rewrite<i/>.
+    
     - Edite o arquivo /etc/apache2/sites-enabled/000-default.conf:
+      
       - Procure pela linha DocumentRoot /varwww/html.
+      
       - Adicione o edite a diretiva <Directory "/var/www/html"> AllowOverride All </Directory>
+    
     - Faça o mesmo procedimento no arquivo /etc/apache2/sites-available/000-default.conf
 
 6 - Edite o arquivo /etc/php/7.2/apache2/php.ini e:
+    
     - Descomente a linha <i>extension=mysqli;<i/>
+    
     - Adicione a linha <i>extension=php-memcache<i/>
 
 7 - Inicie (ou reinicie) os serviços Apache e MariaDB.
 
 8 - No navegador, utilize o seguinte padrão de requisições:
+    
     /getData/<período>?playerName=<nomeDoJogador>
+    
     /getData/<período>?clubName=<nomeDoClube>
+    
     /getData/<período>?clubName=<nomeDoClube>&playerName=<nomeDoJogador>
