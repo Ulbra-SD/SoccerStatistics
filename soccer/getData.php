@@ -196,7 +196,7 @@
 				$srvPort = $location[1];
 				exec('ping -c 1 ' . $srvIP, $output, $result);
 				if ($result == 0) {		// Server ON
-					$requisicao = "192.168.15.5/" . $_SERVER['REQUEST_URI'];
+					$requisicao = "$srvIP:$srvPort/" . $_SERVER['REQUEST_URI'];
 					$ch = curl_init();
 					curl_setopt($ch, CURLOPT_URL, $requisicao);
 					curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
