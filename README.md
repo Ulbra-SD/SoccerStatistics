@@ -3,6 +3,7 @@ Trabalho de G2 - Sistema web distribuído para consulta à base de dados de jogo
 
 # Instruções
 Para configurar e utilizar a aplicação siga os passos abaixo:
+
 1 - O sistema foi desenvolvido utilizando PHP 7.2, MariaDB 10.1 e Apache. Caso não tenha estas ferrramentas instaladas, instale-as. Instale também os pacotes php-mysqli e php-memcache (apt-get install php-mysqli php-memcache).
 2 - Baixe o arquivo soccerdb.sql, que contém a base de dados MySQL que é utilizada pela aplicação.
 3 - Importe o dump da base de dados para o MySQL. O usuário é "root", sem senha.
