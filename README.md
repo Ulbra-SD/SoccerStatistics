@@ -14,7 +14,7 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
 
 5 - Caso o módulo rewrite não esteja habilitado no seu servidor Apache:
 
-    - Ative com o comando <i>a2enmod rewrite<i/>.
+    - Ative com o comando a2enmod rewrite.
     
     - Edite o arquivo /etc/apache2/sites-enabled/000-default.conf:
       
@@ -26,10 +26,10 @@ Para configurar e utilizar a aplicação siga os passos abaixo:
 
 6 - Edite o arquivo /etc/php/7.2/apache2/php.ini e:
     
-    - Descomente a linha <i>extension=mysqli;<i/>
+    - Descomente a linha extension=mysqli;
     
-    - Adicione a linha <i>extension=php-memcache<i/>
-
+    - Adicione a linha extension=php-memcache;
+    
 7 - Inicie (ou reinicie) os serviços Apache e MariaDB.
 
 8 - No navegador, utilize o seguinte padrão de requisições:
